@@ -46,9 +46,9 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
         protected internal OrderingSettings()
         {
             this.elementOrder = ImmutableArray<OrderingTrait>.Empty;
-            this.systemUsingDirectivesFirst = true;
-            this.usingDirectivesPlacement = UsingDirectivesPlacement.InsideNamespace;
-            this.blankLinesBetweenUsingGroups = OptionSetting.Allow;
+            this.systemUsingDirectivesFirst = false;
+            this.usingDirectivesPlacement = UsingDirectivesPlacement.OutsideNamespace;
+            this.blankLinesBetweenUsingGroups = OptionSetting.Omit;
         }
 
         /// <summary>
@@ -110,9 +110,9 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
             };
 
             this.elementOrder = elementOrder?.ToImmutable() ?? ImmutableArray<OrderingTrait>.Empty;
-            this.systemUsingDirectivesFirst = systemUsingDirectivesFirst.GetValueOrDefault(true);
-            this.usingDirectivesPlacement = usingDirectivesPlacement.GetValueOrDefault(UsingDirectivesPlacement.InsideNamespace);
-            this.blankLinesBetweenUsingGroups = blankLinesBetweenUsingGroups.GetValueOrDefault(OptionSetting.Allow);
+            this.systemUsingDirectivesFirst = systemUsingDirectivesFirst.GetValueOrDefault(false);
+            this.usingDirectivesPlacement = usingDirectivesPlacement.GetValueOrDefault(UsingDirectivesPlacement.OutsideNamespace);
+            this.blankLinesBetweenUsingGroups = blankLinesBetweenUsingGroups.GetValueOrDefault(OptionSetting.Omit);
         }
 
         public ImmutableArray<OrderingTrait> ElementOrder

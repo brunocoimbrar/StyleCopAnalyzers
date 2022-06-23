@@ -17,7 +17,7 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
         /// <summary>
         /// The default value for the <see cref="CompanyName"/> property.
         /// </summary>
-        internal const string DefaultCompanyName = "PlaceholderCompany";
+        internal const string DefaultCompanyName = "Bruno Coimbra Ribeiro";
 
         /// <summary>
         /// The default value for the <see cref="GetCopyrightText(string)"/> method.
@@ -118,15 +118,15 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
             this.copyrightText = DefaultCopyrightText;
             this.headerDecoration = null;
             this.variables = ImmutableDictionary<string, string>.Empty;
-            this.xmlHeader = true;
+            this.xmlHeader = false;
 
             this.documentExposedElements = true;
-            this.documentInternalElements = true;
+            this.documentInternalElements = false;
             this.documentPrivateElements = false;
-            this.documentInterfaces = true;
+            this.documentInterfaces = false;
             this.documentPrivateFields = false;
 
-            this.fileNamingConvention = FileNamingConvention.StyleCop;
+            this.fileNamingConvention = FileNamingConvention.Metadata;
 
             this.documentationCulture = DefaultDocumentationCulture;
             this.documentationCultureInfo = CultureInfo.InvariantCulture;
@@ -261,16 +261,16 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
             excludeFromPunctuationCheck ??= AnalyzerConfigHelper.TryGetStringListValue(analyzerConfigOptions, "stylecop.documentation.excludeFromPunctuationCheck")?.ToBuilder();
 
             this.documentExposedElements = documentExposedElements.GetValueOrDefault(true);
-            this.documentInternalElements = documentInternalElements.GetValueOrDefault(true);
+            this.documentInternalElements = documentInternalElements.GetValueOrDefault(false);
             this.documentPrivateElements = documentPrivateElements.GetValueOrDefault(false);
-            this.documentInterfaces = documentInterfaces.GetValueOrDefault(true);
+            this.documentInterfaces = documentInterfaces.GetValueOrDefault(false);
             this.documentPrivateFields = documentPrivateFields.GetValueOrDefault(false);
             this.companyName = companyName ?? DefaultCompanyName;
             this.copyrightText = copyrightText ?? DefaultCopyrightText;
             this.headerDecoration = headerDecoration;
             this.variables = variables?.ToImmutable() ?? ImmutableDictionary<string, string>.Empty;
-            this.xmlHeader = xmlHeader.GetValueOrDefault(true);
-            this.fileNamingConvention = fileNamingConvention.GetValueOrDefault(FileNamingConvention.StyleCop);
+            this.xmlHeader = xmlHeader.GetValueOrDefault(false);
+            this.fileNamingConvention = fileNamingConvention.GetValueOrDefault(FileNamingConvention.Metadata);
             this.documentationCulture = documentationCulture ?? DefaultDocumentationCulture;
             this.documentationCultureInfo = this.documentationCulture == DefaultDocumentationCulture ? CultureInfo.InvariantCulture : new CultureInfo(this.documentationCulture);
             this.excludeFromPunctuationCheck = excludeFromPunctuationCheck?.ToImmutable() ?? DefaultExcludeFromPunctuationCheck;

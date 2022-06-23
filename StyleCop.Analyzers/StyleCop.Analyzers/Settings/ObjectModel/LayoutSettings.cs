@@ -30,7 +30,7 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
         /// </summary>
         protected internal LayoutSettings()
         {
-            this.newlineAtEndOfFile = OptionSetting.Allow;
+            this.newlineAtEndOfFile = OptionSetting.Require;
             this.allowConsecutiveUsings = true;
             this.allowDoWhileOnClosingBrace = false;
         }
@@ -78,7 +78,7 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
             allowConsecutiveUsings ??= AnalyzerConfigHelper.TryGetBooleanValue(analyzerConfigOptions, "stylecop.layout.allowConsecutiveUsings");
             allowDoWhileOnClosingBrace ??= AnalyzerConfigHelper.TryGetBooleanValue(analyzerConfigOptions, "stylecop.layout.allowDoWhileOnClosingBrace");
 
-            this.newlineAtEndOfFile = newlineAtEndOfFile.GetValueOrDefault(OptionSetting.Allow);
+            this.newlineAtEndOfFile = newlineAtEndOfFile.GetValueOrDefault(OptionSetting.Require);
             this.allowConsecutiveUsings = allowConsecutiveUsings.GetValueOrDefault(true);
             this.allowDoWhileOnClosingBrace = allowDoWhileOnClosingBrace.GetValueOrDefault(false);
         }

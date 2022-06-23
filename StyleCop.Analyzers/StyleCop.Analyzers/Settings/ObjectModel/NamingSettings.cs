@@ -18,7 +18,7 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
         /// </summary>
         protected internal NamingSettings()
         {
-            this.AllowCommonHungarianPrefixes = true;
+            this.AllowCommonHungarianPrefixes = false;
             this.AllowedHungarianPrefixes = ImmutableArray<string>.Empty;
             this.AllowedNamespaceComponents = ImmutableArray<string>.Empty;
 
@@ -98,7 +98,7 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
                 _ => null,
             };
 
-            this.AllowCommonHungarianPrefixes = allowCommonHungarianPrefixes.GetValueOrDefault(true);
+            this.AllowCommonHungarianPrefixes = allowCommonHungarianPrefixes.GetValueOrDefault(false);
             this.AllowedHungarianPrefixes = allowedHungarianPrefixes?.ToImmutable() ?? ImmutableArray<string>.Empty;
             this.AllowedNamespaceComponents = allowedNamespaceComponents?.ToImmutable() ?? ImmutableArray<string>.Empty;
 

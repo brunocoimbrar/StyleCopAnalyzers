@@ -40,18 +40,18 @@ namespace StyleCop.Analyzers.OrderingRules
     /// <para>Within a class, struct, or interface, elements should be positioned in the following order:</para>
     ///
     /// <list type="bullet">
+    /// <item><description>Enums</description></item>
+    /// <item><description>Interfaces</description></item>
+    /// <item><description>Structs</description></item>
+    /// <item><description>Classes</description></item>
+    /// <item><description>Delegates</description></item>
+    /// <item><description>Events</description></item>
     /// <item><description>Fields</description></item>
     /// <item><description>Constructors</description></item>
     /// <item><description>Finalizers</description></item>
-    /// <item><description>Delegates</description></item>
-    /// <item><description>Events</description></item>
-    /// <item><description>Enums</description></item>
-    /// <item><description>Interfaces</description></item>
-    /// <item><description>Properties</description></item>
     /// <item><description>Indexers</description></item>
+    /// <item><description>Properties</description></item>
     /// <item><description>Methods</description></item>
-    /// <item><description>Structs</description></item>
-    /// <item><description>Classes</description></item>
     /// </list>
     ///
     /// <para>Complying with a standard ordering scheme based on element type can increase the readability and
@@ -134,20 +134,20 @@ namespace StyleCop.Analyzers.OrderingRules
             SyntaxKind.ClassDeclaration);
 
         private static readonly ImmutableArray<SyntaxKind> TypeMemberOrder = ImmutableArray.Create(
+            SyntaxKind.EnumDeclaration,
+            SyntaxKind.InterfaceDeclaration,
+            SyntaxKind.StructDeclaration,
+            SyntaxKind.ClassDeclaration,
+            SyntaxKind.DelegateDeclaration,
+            SyntaxKind.EventDeclaration,
             SyntaxKind.FieldDeclaration,
             SyntaxKind.ConstructorDeclaration,
             SyntaxKind.DestructorDeclaration,
-            SyntaxKind.DelegateDeclaration,
-            SyntaxKind.EventDeclaration,
-            SyntaxKind.EnumDeclaration,
-            SyntaxKind.InterfaceDeclaration,
-            SyntaxKind.PropertyDeclaration,
             SyntaxKind.IndexerDeclaration,
+            SyntaxKind.PropertyDeclaration,
             SyntaxKind.ConversionOperatorDeclaration,
             SyntaxKind.OperatorDeclaration,
-            SyntaxKind.MethodDeclaration,
-            SyntaxKind.StructDeclaration,
-            SyntaxKind.ClassDeclaration);
+            SyntaxKind.MethodDeclaration);
 
         private static readonly Dictionary<SyntaxKind, string> MemberNames = new Dictionary<SyntaxKind, string>
         {

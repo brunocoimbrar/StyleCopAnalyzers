@@ -15,7 +15,7 @@ namespace StyleCop.Analyzers.Settings.ObjectModel
         /// The default value for the <see cref="TopLevelTypes"/> property.
         /// </summary>
         private static readonly ImmutableArray<TopLevelType> DefaultTopLevelTypes =
-            ImmutableArray.Create(TopLevelType.Class);
+            ImmutableArray.Create(TopLevelType.Class, TopLevelType.Interface, TopLevelType.Struct, TopLevelType.Delegate, TopLevelType.Enum);
 
         /// <summary>
         /// This is the backing field for the <see cref="TopLevelTypes"/> property.
