@@ -49,21 +49,21 @@ namespace StyleCop.Analyzers.SpacingRules
         /// </summary>
         /// <value>The diagnostic descriptor for an opening parenthesis that should not be preceded by whitespace.</value>
         public static DiagnosticDescriptor DescriptorNotPreceded { get; }
-            = new DiagnosticDescriptor(DiagnosticId, Title, MessageNotPreceded, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            = new DiagnosticDescriptor(DiagnosticId, Title, MessageNotPreceded, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         /// <summary>
         /// Gets the diagnostic descriptor for an opening parenthesis that should be preceded by whitespace.
         /// </summary>
         /// <value>The diagnostic descriptor for an opening parenthesis that should be preceded by whitespace.</value>
         public static DiagnosticDescriptor DescriptorPreceded { get; }
-            = new DiagnosticDescriptor(DiagnosticId, Title, MessagePreceded, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            = new DiagnosticDescriptor(DiagnosticId, Title, MessagePreceded, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         /// <summary>
         /// Gets the diagnostic descriptor for an opening parenthesis that should not be followed by whitespace.
         /// </summary>
         /// <value>The diagnostic descriptor for an opening parenthesis that should not be followed by whitespace.</value>
         public static DiagnosticDescriptor DescriptorNotFollowed { get; }
-            = new DiagnosticDescriptor(DiagnosticId, Title, MessageNotFollowed, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            = new DiagnosticDescriptor(DiagnosticId, Title, MessageNotFollowed, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         /// <inheritdoc/>
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =

@@ -62,7 +62,7 @@ namespace StyleCop.Analyzers.NamingRules
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(NamingResources.SA1305Description), NamingResources.ResourceManager, typeof(NamingResources));
 
         private static readonly DiagnosticDescriptor Descriptor =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.NamingRules, DiagnosticSeverity.Warning, AnalyzerConstants.DisabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.NamingRules, DiagnosticSeverity.Hidden, AnalyzerConstants.DisabledByDefault, Description, HelpLink);
 
         private static readonly ImmutableArray<string> CommonPrefixes =
             ImmutableArray.Create("as", "at", "by", "do", "go", "if", "in", "is", "it", "no", "of", "on", "or", "to");

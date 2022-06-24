@@ -38,7 +38,7 @@ namespace StyleCop.Analyzers.ReadabilityRules
 
         private static readonly DiagnosticDescriptor Descriptor =
 #pragma warning disable RS2000 // Add analyzer diagnostic IDs to analyzer release.
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.ReadabilityRules, DiagnosticSeverity.Warning, AnalyzerConstants.DisabledByDefault, Description, HelpLink, WellKnownDiagnosticTags.NotConfigurable);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.ReadabilityRules, DiagnosticSeverity.Hidden, AnalyzerConstants.DisabledByDefault, Description, HelpLink, WellKnownDiagnosticTags.NotConfigurable);
 #pragma warning restore RS2000 // Add analyzer diagnostic IDs to analyzer release.
 
         /// <inheritdoc/>

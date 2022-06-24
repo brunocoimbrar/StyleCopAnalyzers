@@ -41,7 +41,7 @@ namespace StyleCop.Analyzers.NamingRules
 
 #pragma warning disable SA1202 // Elements should be ordered by access
         internal static readonly DiagnosticDescriptor Descriptor =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.NamingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.NamingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 #pragma warning restore SA1202 // Elements should be ordered by access
 
         private static readonly Action<SyntaxNodeAnalysisContext> FieldDeclarationAction = HandleFieldDeclaration;

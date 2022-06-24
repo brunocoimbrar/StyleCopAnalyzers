@@ -47,7 +47,7 @@ namespace StyleCop.Analyzers.ReadabilityRules
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(ReadabilityResources.SA1101Description), ReadabilityResources.ResourceManager, typeof(ReadabilityResources));
 
         private static readonly DiagnosticDescriptor Descriptor =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.ReadabilityRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.ReadabilityRules, DiagnosticSeverity.Hidden, AnalyzerConstants.DisabledAlternative, Description, HelpLink);
 
         private static readonly Action<SyntaxNodeAnalysisContext> MemberAccessExpressionAction = HandleMemberAccessExpression;
         private static readonly Action<SyntaxNodeAnalysisContext> SimpleNameAction = HandleSimpleName;

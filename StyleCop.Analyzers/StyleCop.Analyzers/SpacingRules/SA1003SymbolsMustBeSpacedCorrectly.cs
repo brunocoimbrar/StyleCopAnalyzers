@@ -140,7 +140,7 @@ namespace StyleCop.Analyzers.SpacingRules
         /// A diagnostic descriptor.
         /// </value>
         public static DiagnosticDescriptor DescriptorNotFollowedByComment { get; } =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatNotFollowedByComment, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatNotFollowedByComment, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         /// <summary>
         /// Gets the descriptor indicating that an operator should be preceded by whitespace.
@@ -149,7 +149,7 @@ namespace StyleCop.Analyzers.SpacingRules
         /// A diagnostic descriptor.
         /// </value>
         public static DiagnosticDescriptor DescriptorPrecededByWhitespace { get; } =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatPrecededByWhitespace, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatPrecededByWhitespace, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         /// <summary>
         /// Gets the descriptor indicating that an operator should be preceded by whitespace.
@@ -158,7 +158,7 @@ namespace StyleCop.Analyzers.SpacingRules
         /// A diagnostic descriptor.
         /// </value>
         public static DiagnosticDescriptor DescriptorNotPrecededByWhitespace { get; } =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatNotPrecededByWhitespace, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatNotPrecededByWhitespace, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         /// <summary>
         /// Gets the descriptor indicating that an operator should be followed by whitespace.
@@ -167,7 +167,7 @@ namespace StyleCop.Analyzers.SpacingRules
         /// A diagnostic descriptor.
         /// </value>
         public static DiagnosticDescriptor DescriptorFollowedByWhitespace { get; } =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatFollowedByWhitespace, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatFollowedByWhitespace, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         /// <summary>
         /// Gets the descriptor indicating that an operator should be preceded by whitespace.
@@ -176,7 +176,7 @@ namespace StyleCop.Analyzers.SpacingRules
         /// A diagnostic descriptor.
         /// </value>
         public static DiagnosticDescriptor DescriptorNotFollowedByWhitespace { get; } =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatNotFollowedByWhitespace, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatNotFollowedByWhitespace, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         /// <summary>
         /// Gets the descriptor indicating that an operator should be appear at the end of a text line.
@@ -185,7 +185,7 @@ namespace StyleCop.Analyzers.SpacingRules
         /// A diagnostic descriptor.
         /// </value>
         public static DiagnosticDescriptor DescriptorNotAtEndOfLine { get; } =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatNotAtEndOfLine, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatNotAtEndOfLine, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         /// <inheritdoc/>
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =

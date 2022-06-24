@@ -36,7 +36,7 @@ namespace StyleCop.Analyzers.SpacingRules
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(SpacingResources.SA1018Description), SpacingResources.ResourceManager, typeof(SpacingResources));
 
         private static readonly DiagnosticDescriptor Descriptor =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.SpacingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         private static readonly Action<SyntaxNodeAnalysisContext> NullableTypeAction = HandleNullableType;
 

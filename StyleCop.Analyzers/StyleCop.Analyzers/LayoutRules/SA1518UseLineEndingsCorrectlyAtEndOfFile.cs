@@ -43,13 +43,13 @@ namespace StyleCop.Analyzers.LayoutRules
 
 #pragma warning disable SA1202 // Elements should be ordered by access
         internal static readonly DiagnosticDescriptor DescriptorAllow =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatAllow, AnalyzerCategory.LayoutRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, DescriptionAllow, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatAllow, AnalyzerCategory.LayoutRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, DescriptionAllow, HelpLink);
 
         internal static readonly DiagnosticDescriptor DescriptorRequire =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatRequire, AnalyzerCategory.LayoutRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, DescriptionRequire, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatRequire, AnalyzerCategory.LayoutRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, DescriptionRequire, HelpLink);
 
         internal static readonly DiagnosticDescriptor DescriptorOmit =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatOmit, AnalyzerCategory.LayoutRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, DescriptionOmit, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatOmit, AnalyzerCategory.LayoutRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, DescriptionOmit, HelpLink);
 #pragma warning restore SA1202 // Elements should be ordered by access
 
         private static readonly Action<SyntaxTreeAnalysisContext, StyleCopSettings> SyntaxTreeAction = HandleSyntaxTree;
@@ -69,7 +69,13 @@ namespace StyleCop.Analyzers.LayoutRules
 
         private static void HandleSyntaxTree(SyntaxTreeAnalysisContext context, StyleCopSettings settings)
         {
+            if (context.Tree.GetRoot().Span.Length == 0)
+            {
+                return;
+            }
+
             var endOfFileToken = context.Tree.GetRoot().GetLastToken(includeZeroWidth: true);
+
             TextSpan reportedSpan = new TextSpan(endOfFileToken.SpanStart, 0);
 
             SyntaxTrivia precedingTrivia = default;

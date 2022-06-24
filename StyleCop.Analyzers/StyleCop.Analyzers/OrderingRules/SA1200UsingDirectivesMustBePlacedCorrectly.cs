@@ -173,10 +173,10 @@ namespace StyleCop.Analyzers.OrderingRules
 
 #pragma warning disable SA1202 // Elements should be ordered by access
         internal static readonly DiagnosticDescriptor DescriptorInside =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatInside, AnalyzerCategory.OrderingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, DescriptionInside, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatInside, AnalyzerCategory.OrderingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, DescriptionInside, HelpLink);
 
         internal static readonly DiagnosticDescriptor DescriptorOutside =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatOutside, AnalyzerCategory.OrderingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, DescriptionOutside, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormatOutside, AnalyzerCategory.OrderingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, DescriptionOutside, HelpLink);
 #pragma warning restore SA1202 // Elements should be ordered by access
 
         private static readonly Action<SyntaxNodeAnalysisContext, StyleCopSettings> CompilationUnitAction = HandleCompilationUnit;

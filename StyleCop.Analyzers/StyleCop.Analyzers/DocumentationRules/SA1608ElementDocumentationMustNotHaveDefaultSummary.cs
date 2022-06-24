@@ -48,7 +48,7 @@ namespace StyleCop.Analyzers.DocumentationRules
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(DocumentationResources.SA1608Description), DocumentationResources.ResourceManager, typeof(DocumentationResources));
 
         private static readonly DiagnosticDescriptor Descriptor =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.DocumentationRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.DocumentationRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         public SA1608ElementDocumentationMustNotHaveDefaultSummary()
             : base(inheritDocSuppressesWarnings: true, matchElementName: XmlCommentHelper.SummaryXmlTag)

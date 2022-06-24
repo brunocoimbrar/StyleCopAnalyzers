@@ -121,7 +121,7 @@ namespace StyleCop.Analyzers.OrderingRules
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(OrderingResources.SA1201Description), OrderingResources.ResourceManager, typeof(OrderingResources));
 
         private static readonly DiagnosticDescriptor Descriptor =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.OrderingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.OrderingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
 
         // extern alias and usings are missing here because the compiler itself is enforcing the right order.
         private static readonly ImmutableArray<SyntaxKind> OuterOrder = ImmutableArray.Create(

@@ -45,7 +45,7 @@ namespace StyleCop.Analyzers.NamingRules
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(NamingResources.SA1309Description), NamingResources.ResourceManager, typeof(NamingResources));
 
         private static readonly DiagnosticDescriptor Descriptor =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.NamingRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.NamingRules, DiagnosticSeverity.Hidden, AnalyzerConstants.DisabledAlternative, Description, HelpLink);
 
         private static readonly Action<SyntaxNodeAnalysisContext> FieldDeclarationAction = HandleFieldDeclaration;
 

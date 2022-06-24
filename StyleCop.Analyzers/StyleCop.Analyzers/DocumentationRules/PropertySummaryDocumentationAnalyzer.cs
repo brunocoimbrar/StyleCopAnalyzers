@@ -49,7 +49,7 @@ namespace StyleCop.Analyzers.DocumentationRules
         /// </summary>
         /// <value>The <see cref="DiagnosticDescriptor"/> for SA1624.</value>
         public static DiagnosticDescriptor SA1624Descriptor { get; } =
-            new DiagnosticDescriptor(SA1624DiagnosticId, SA1624Title, SA1624MessageFormat, AnalyzerCategory.DocumentationRules, DiagnosticSeverity.Warning, AnalyzerConstants.EnabledByDefault, SA1624Description, SA1624HelpLink);
+            new DiagnosticDescriptor(SA1624DiagnosticId, SA1624Title, SA1624MessageFormat, AnalyzerCategory.DocumentationRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, SA1624Description, SA1624HelpLink);
 
         /// <inheritdoc/>
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =
