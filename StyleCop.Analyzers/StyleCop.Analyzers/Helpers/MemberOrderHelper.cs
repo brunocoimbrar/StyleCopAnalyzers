@@ -19,21 +19,21 @@ namespace StyleCop.Analyzers.Helpers
     internal struct MemberOrderHelper
     {
         private static readonly ImmutableArray<SyntaxKind> TypeMemberOrder = ImmutableArray.Create(
-            SyntaxKind.ClassDeclaration,
+            SyntaxKind.NamespaceDeclaration,
+            SyntaxKind.EnumDeclaration,
+            SyntaxKind.InterfaceDeclaration,
             SyntaxKind.StructDeclaration,
-            SyntaxKind.MethodDeclaration,
-            SyntaxKind.OperatorDeclaration,
-            SyntaxKind.ConversionOperatorDeclaration,
+            SyntaxKind.ClassDeclaration,
+            SyntaxKind.DelegateDeclaration,
+            SyntaxKind.EventDeclaration,
+            SyntaxKind.FieldDeclaration,
+            SyntaxKind.ConstructorDeclaration,
+            SyntaxKind.DestructorDeclaration,
             SyntaxKind.IndexerDeclaration,
             SyntaxKind.PropertyDeclaration,
-            SyntaxKind.InterfaceDeclaration,
-            SyntaxKind.EnumDeclaration,
-            SyntaxKind.EventDeclaration,
-            SyntaxKind.DelegateDeclaration,
-            SyntaxKind.DestructorDeclaration,
-            SyntaxKind.ConstructorDeclaration,
-            SyntaxKind.FieldDeclaration,
-            SyntaxKind.NamespaceDeclaration);
+            SyntaxKind.ConversionOperatorDeclaration,
+            SyntaxKind.OperatorDeclaration,
+            SyntaxKind.MethodDeclaration);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MemberOrderHelper"/> struct.
@@ -142,12 +142,15 @@ namespace StyleCop.Analyzers.Helpers
             SyntaxKind type = member.Kind();
 
             AccessLevel accessibility;
-            if ((type == SyntaxKind.ConstructorDeclaration && modifiers.Any(SyntaxKind.StaticKeyword))
-                || (type == SyntaxKind.MethodDeclaration && ((MethodDeclarationSyntax)member).ExplicitInterfaceSpecifier != null)
+            if (type == SyntaxKind.ConstructorDeclaration && modifiers.Any(SyntaxKind.StaticKeyword))
+            {
+                accessibility = AccessLevel.Public;
+            }
+            else if ((type == SyntaxKind.MethodDeclaration && ((MethodDeclarationSyntax)member).ExplicitInterfaceSpecifier != null)
                 || (type == SyntaxKind.PropertyDeclaration && ((PropertyDeclarationSyntax)member).ExplicitInterfaceSpecifier != null)
                 || (type == SyntaxKind.IndexerDeclaration && ((IndexerDeclarationSyntax)member).ExplicitInterfaceSpecifier != null))
             {
-                accessibility = AccessLevel.Public;
+                accessibility = AccessLevel.Private;
             }
             else
             {
