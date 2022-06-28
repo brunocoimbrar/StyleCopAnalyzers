@@ -58,7 +58,7 @@ namespace StyleCop.Analyzers.MaintainabilityRules
             {
                 var fieldDeclarationSyntax = (IFieldSymbol)symbolAnalysisContext.Symbol;
                 if (!IsFieldPrivate(fieldDeclarationSyntax) &&
-                    !IsStaticReadonly(fieldDeclarationSyntax) &&
+                    !IsReadonly(fieldDeclarationSyntax) &&
                     IsParentAClass(fieldDeclarationSyntax) &&
                     !fieldDeclarationSyntax.IsConst)
                 {
@@ -80,9 +80,9 @@ namespace StyleCop.Analyzers.MaintainabilityRules
                 return fieldDeclarationSyntax.DeclaredAccessibility == Accessibility.Private;
             }
 
-            private static bool IsStaticReadonly(IFieldSymbol fieldDeclarationSyntax)
+            private static bool IsReadonly(IFieldSymbol fieldDeclarationSyntax)
             {
-                return fieldDeclarationSyntax.IsStatic && fieldDeclarationSyntax.IsReadOnly;
+                return fieldDeclarationSyntax.IsReadOnly;
             }
 
             private static bool IsParentAClass(IFieldSymbol fieldDeclarationSyntax)

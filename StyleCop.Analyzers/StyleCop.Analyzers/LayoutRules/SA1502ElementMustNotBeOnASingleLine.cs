@@ -80,6 +80,7 @@ namespace StyleCop.Analyzers.LayoutRules
         private static void HandleBaseTypeDeclaration(SyntaxNodeAnalysisContext context)
         {
             var typeDeclaration = (BaseTypeDeclarationSyntax)context.Node;
+
             CheckViolation(context, typeDeclaration.OpenBraceToken, typeDeclaration.CloseBraceToken);
         }
 
@@ -103,7 +104,7 @@ namespace StyleCop.Analyzers.LayoutRules
             var baseMethodDeclaration = (BaseMethodDeclarationSyntax)context.Node;
 
             // Method declarations in interfaces will have an empty body.
-            if (baseMethodDeclaration.Body != null)
+            if (baseMethodDeclaration.Body != null && baseMethodDeclaration.Body.ChildNodes().Any())
             {
                 CheckViolation(context, baseMethodDeclaration.Body.OpenBraceToken, baseMethodDeclaration.Body.CloseBraceToken);
             }
@@ -114,7 +115,7 @@ namespace StyleCop.Analyzers.LayoutRules
             var localFunctionStatement = (LocalFunctionStatementSyntaxWrapper)context.Node;
 
             // Expression-bodied local functions do not have a body
-            if (localFunctionStatement.Body != null)
+            if (localFunctionStatement.Body != null && localFunctionStatement.Body.ChildNodes().Any())
             {
                 CheckViolation(context, localFunctionStatement.Body.OpenBraceToken, localFunctionStatement.Body.CloseBraceToken);
             }
@@ -123,12 +124,21 @@ namespace StyleCop.Analyzers.LayoutRules
         private static void HandleNamespaceDeclaration(SyntaxNodeAnalysisContext context)
         {
             var namespaceDeclaration = (NamespaceDeclarationSyntax)context.Node;
-            CheckViolation(context, namespaceDeclaration.OpenBraceToken, namespaceDeclaration.CloseBraceToken);
+
+            if (namespaceDeclaration.ChildNodes().Any(node => node is TypeDeclarationSyntax))
+            {
+                CheckViolation(context, namespaceDeclaration.OpenBraceToken, namespaceDeclaration.CloseBraceToken);
+            }
         }
 
         private static void CheckViolation(SyntaxNodeAnalysisContext context, SyntaxToken openBraceToken, SyntaxToken closeBraceToken)
         {
             if (openBraceToken.IsKind(SyntaxKind.None) || closeBraceToken.IsKind(SyntaxKind.None))
+            {
+                return;
+            }
+
+            if (openBraceToken.SpanStart == closeBraceToken.SpanStart - 2)
             {
                 return;
             }
