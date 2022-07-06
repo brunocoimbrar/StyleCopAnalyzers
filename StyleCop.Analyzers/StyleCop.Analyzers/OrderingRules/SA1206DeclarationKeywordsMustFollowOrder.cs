@@ -46,7 +46,7 @@ namespace StyleCop.Analyzers.OrderingRules
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(OrderingResources.SA1206Description), OrderingResources.ResourceManager, typeof(OrderingResources));
 
         private static readonly DiagnosticDescriptor Descriptor =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.OrderingRules, DiagnosticSeverity.Error, AnalyzerConstants.EnabledByDefault, Description, HelpLink);
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, AnalyzerCategory.OrderingRules, DiagnosticSeverity.Hidden, AnalyzerConstants.DisabledByDefault, Description, HelpLink);
 
         private static readonly ImmutableArray<SyntaxKind> HandledSyntaxKinds =
             ImmutableArray.Create(
